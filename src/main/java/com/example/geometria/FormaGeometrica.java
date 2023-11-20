@@ -1,6 +1,6 @@
 package com.example.geometria;
 
-public abstract class FormaGeometrica {
+public abstract class FormaGeometrica implements Misurabile{
 
 
     public double area() {
