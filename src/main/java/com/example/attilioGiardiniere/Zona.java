@@ -4,8 +4,8 @@ import com.example.geometria.Misurabile;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.LogManager;
-import java.util.logging.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Zona implements Misurabile {
 
