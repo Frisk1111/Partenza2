@@ -4,18 +4,29 @@ import com.example.geometria.Misurabile;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
 
-public class Zona implements  Misurabile {
+public class Zona implements Misurabile {
 
 
-    private List<Misurabile> misurabili = new ArrayList<>();
+//    private static final Logger logger = LogManager.getLogger("HELLO WORLD");
+
+    private List<Zona> zone = new ArrayList<>();
 
     private String descrizione;
     private Double area;
     private Double perimetro;
 
-    public Zona(String descrizione) {
-        this.descrizione = descrizione;
+    private double totArea = 0.0;
+    private double totPerimetro = 0.0;
+
+    private Misurabile forma;
+
+    public Zona(String descrizione, Misurabile misurabile) {
+        this.perimetro = misurabile.perimetro();
+        this.area = misurabile.area();
+        this.forma = misurabile;
     }
 
     public Zona(String descrizione, Double area, Double perimetro) {
@@ -44,14 +55,14 @@ public class Zona implements  Misurabile {
 
     }
 
-    public static final Zona fromArea(String descrizione, double area){
+    public static final Zona fromArea(String descrizione, double area) {
 
-        return new Zona(descrizione, 0.0);
+        return new Zona(descrizione, area);
     }
 
-    public static final Zona fromPerimetro(String descrizione, double area){
+    public static final Zona fromPerimetro(String descrizione, double perimetro) {
 
-        return new Zona(descrizione, 0.0);
+        return new Zona(descrizione, perimetro);
     }
 
     public double addArea(double area) {
@@ -60,24 +71,52 @@ public class Zona implements  Misurabile {
 
     }
 
-    void getDescrizione(String descrizione) {
+    public void getDescrizione(String descrizione) {
 
         this.descrizione = descrizione;
 
     }
 
-    void addMisurabile(Misurabile misurabile) {
+    public void add(String descrizione, Misurabile misurabile) {
 
-
-    }
-
-    void remove(Integer index) {
+        zone.add(new Zona(descrizione, misurabile));
 
     }
 
 
-    void printList() {
+    public void add(Misurabile misurabile, Regole regolaPerimetro, Regole regolaArea) {
 
+        zone.add(new Zona("", misurabile));
+
+
+        totPerimetro = totPerimetro + regolaPerimetro.apply(misurabile.perimetro());
+        totArea = totArea + regolaArea.apply(misurabile.area());
+
+
+    }
+
+    public void add(Zona forma) {
+
+        zone.add(forma);
+
+
+    }
+
+    public void remove(Integer index) {
+        Misurabile oggetto = zone.get(index);
+      zone.remove(oggetto);
+        zone.set(index, null);
+    }
+
+
+    public void printList() {
+
+        int index = 0;
+
+        for (Misurabile misurabile : zone) {
+            System.out.println(index++ + " " + misurabile);
+
+        }
 
     }
 
