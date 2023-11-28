@@ -4,8 +4,9 @@ import com.example.geometria.Misurabile;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
+//import org.apache.logging.log4j.LogManager;
+//import org.apache.logging.log4j.Logger;
 
 public class Zona implements Misurabile {
 
@@ -15,45 +16,50 @@ public class Zona implements Misurabile {
     private List<Zona> zone = new ArrayList<>();
 
     private String descrizione;
-    private Double area;
-    private Double perimetro;
 
     private double totArea = 0.0;
     private double totPerimetro = 0.0;
 
-    private Misurabile forma;
+
 
     public Zona(String descrizione, Misurabile misurabile) {
-        this.perimetro = misurabile.perimetro();
-        this.area = misurabile.area();
-        this.forma = misurabile;
+
+        /*
+        *  così richiamiamo il costruttore !!
+        */
+        this(descrizione, misurabile.area(), misurabile.perimetro());
+//        this.totPerimetro = misurabile.perimetro();
+//        this.totArea = misurabile.area();
+
     }
 
     public Zona(String descrizione, Double area, Double perimetro) {
         this.descrizione = descrizione;
-        this.area = area;
-        this.perimetro = perimetro;
+        this.totArea = area;
+        this.totPerimetro = perimetro;
     }
 
 
     public Zona(String descrizione, Double area) {
         this.descrizione = descrizione;
-        this.area = area;
+        this.totArea = area;
     }
 
     @Override
     public double perimetro() {
 
-        return this.perimetro;
+        return this.totPerimetro;
 
     }
 
     @Override
     public double area() {
 
-        return this.area;
+        return this.totArea;
 
     }
+
+
 
     public static final Zona fromArea(String descrizione, double area) {
 
@@ -67,7 +73,7 @@ public class Zona implements Misurabile {
 
     public double addArea(double area) {
 
-        return this.area = area;
+        return this.totArea += area;
 
     }
 
@@ -113,8 +119,20 @@ public class Zona implements Misurabile {
 
         int index = 0;
 
+
+        StringBuilder sb = new StringBuilder();
         for (Misurabile misurabile : zone) {
-            System.out.println(index++ + " " + misurabile);
+
+            sb.append("elemento ");
+
+
+            sb.append(++index);
+            sb.append(": ");
+            sb.append(misurabile.toString());
+
+
+
+            System.out.println(sb);
 
         }
 
