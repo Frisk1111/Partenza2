@@ -1,11 +1,11 @@
-package com.example.javadb.prova;
+package com.example.javadb.javadb.prova;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import static com.example.javadb.parameter.Parameters.*;
+import static com.example.javadb.javadb.parameter.Parameters.*;
 
 
 public class Prova01 {

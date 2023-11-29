@@ -1,4 +1,4 @@
-package com.example.javadb.entities;
+package com.example.javadb.javadb.entities;
 
 import java.io.Serializable;
 import java.util.Objects;

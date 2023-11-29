@@ -1,14 +1,14 @@
-package com.example.javadb.prova;
+package com.example.javadb.javadb.prova;
 
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import com.example.javadb.exeception.DatatabaseOperationExecption;
+import com.example.javadb.javadb.exeception.DatatabaseOperationExecption;
 
 import java.sql.*;
 
 
-import static com.example.javadb.parameter.Parameters.MYSQL_DRIVER_URL;
+import static com.example.javadb.javadb.parameter.Parameters.MYSQL_DRIVER_URL;
 
 public class Prova02 {
 

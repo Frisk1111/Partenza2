@@ -1,4 +1,4 @@
-package com.example.javadb.exeception;
+package com.example.javadb.javadb.exeception;
 
 import java.sql.SQLException;
 

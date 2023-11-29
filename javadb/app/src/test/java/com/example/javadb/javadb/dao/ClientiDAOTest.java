@@ -1,17 +1,16 @@
-package com.example.javadb.dao;
+package com.example.javadb.javadb.dao;
 
-import com.example.javadb.entities.Cliente;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import com.example.javadb.javadb.entities.Cliente;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class ClientiDAOTest {
-
 
     private static final Logger log = LogManager.getLogger("ClientiDAO.class");
 

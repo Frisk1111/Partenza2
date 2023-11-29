@@ -1,4 +1,4 @@
-package com.example.javadb.parameter;
+package com.example.javadb.javadb.parameter;
 
 public class Parameters {
 

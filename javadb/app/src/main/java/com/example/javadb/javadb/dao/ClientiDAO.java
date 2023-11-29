@@ -1,4 +1,4 @@
-package com.example.javadb.dao;
+package com.example.javadb.javadb.dao;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -6,13 +6,13 @@ import java.util.List;
 
 
 
-import com.example.javadb.exeception.DatatabaseOperationExecption;
+import com.example.javadb.javadb.exeception.DatatabaseOperationExecption;
 
-import com.example.javadb.entities.Cliente;
+import com.example.javadb.javadb.entities.Cliente;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import static com.example.javadb.parameter.Parameters.MYSQL_DRIVER_URL;
+import static com.example.javadb.javadb.parameter.Parameters.MYSQL_DRIVER_URL;
 
 public class ClientiDAO implements DAO<Cliente, Integer> {
 
